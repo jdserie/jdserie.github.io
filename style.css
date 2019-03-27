@@ -20,30 +20,15 @@ body {
     }
   }
 
-nav {
-    background-color: gray;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 80px;
-    width: 100vw;
-    z-index: 1;
-}
 
 h1 {
     text-align: center;
 }
 
 
-
-nav ul li {
-    float: right;
-    margin-top: 20px;
-    margin-right: 50px;
-    list-style-type: none;
-    text-align: center;
+nav {
+    background-color:  grey;
 }
-
 
 
 #brand {
@@ -53,6 +38,8 @@ nav ul li {
 .devicon-cplusplus-plain {
     font-size: 5rem
   }
+
+
 
 
 .nav-link {
