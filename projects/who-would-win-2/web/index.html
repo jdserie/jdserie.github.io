@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101722">
+<meta name="description" content="Compare fictional combatants across 11 categories and six arenas, with source notes and a local win–loss ledger.">
+<title>Who Would Win in a Fight? 2.0</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<script defer src="engine.js"></script>
+<script defer src="roster.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to matchup</a>
+<header class="wrap top">
+  <a class="brand" href="#"><img src="assets/icon.png" width="36" height="36" alt="">Who Would Win? 2.0</a>
+  <nav aria-label="Main"><a href="#matchup">Matchup</a><a href="#roster">Roster</a><a href="#record">Win–loss</a><a href="#downloads">Downloads</a></nav>
+</header>
+<main class="wrap" id="main">
+  <h1 class="sr-only">Who Would Win in a Fight? 2.0</h1>
+  <img src="assets/hero.webp" class="hero" alt="Who Would Win in a Fight? 2.0 wordmark with crossed cyan and red shockwaves" width="1472" height="828" fetchpriority="high">
+  <section id="matchup" aria-labelledby="match-title">
+    <h2 id="match-title">Set up a matchup</h2>
+    <form id="match-form" class="panel">
+      <div class="controls">
+        <label>Fighter A<select id="left" required></select></label>
+        <label>Fighter B<select id="right" required></select></label>
+        <label>Arena<select id="stage" required></select></label>
+      </div>
+      <p id="stage-description" class="muted"></p>
+      <label>Scoring<select id="scoring"><option value="arena">2.0 · 11 weighted categories</option><option value="classic">Classic · 6 category points</option></select></label>
+      <label class="checkbox"><input id="modifiers" type="checkbox" checked> Apply arena effects</label>
+      <button type="submit">Compare fighters</button>
+      <p id="input-error" role="alert" class="notice"></p>
+    </form>
+    <section id="result" class="panel" aria-live="polite" hidden></section>
+  </section>
+  <section id="roster" aria-labelledby="roster-title">
+    <h2 id="roster-title">Fighter roster</h2>
+    <div class="panel">
+      <div class="controls">
+        <label>Search fighters<input id="search" type="search" placeholder="Name, series, version…" autocomplete="off"></label>
+        <label>Medium<select id="medium"><option value="">All media</option></select></label>
+        <label>Franchise<select id="franchise"><option value="">All franchises</option></select></label>
+      </div>
+      <p id="roster-count" role="status" class="muted"></p>
+      <div id="fighter-grid" class="fighter-grid"></div>
+      <button id="more" class="secondary" type="button" hidden>Show more</button>
+    </div>
+  </section>
+  <section id="record" aria-labelledby="record-title">
+    <h2 id="record-title">Win–loss record</h2>
+    <div class="panel"><p class="muted">Saved simulations on this device. Exhibition matchups and fictional canon records are separate.</p><div id="record-body"></div></div>
+  </section>
+  <section id="method" aria-labelledby="method-title">
+    <h2 id="method-title">How scoring works</h2>
+    <div class="panel">
+      <p>Ratings are rough estimates for the listed forms, across this project’s roster. A category’s lowest anchor is 1 and its highest anchor is 100. Fighters can share a rating. These numbers have no probability interpretation.</p>
+      <p>The app compares 11 weighted categories. A margin within two points is a toss-up. The scenario assumes standard gear and no outside help or preparation. Stage modifiers are usually capped at ±10 per category and final ratings stay between 1 and 100.</p>
+      <p>Classic uses six category points and breaks tied point counts with the sum of the six ratings. Classic uses the current roster ratings and skips arena effects.</p>
+      <p class="muted">Recovery, sealing, control, and other unusual win conditions can behave differently across fictional worlds. The outcome panel shows the evidence notes so you can judge such cases yourself.</p>
+      <div id="category-method"></div>
+      <p><a href="research.html">Episode and source notes</a></p>
+    </div>
+  </section>
+  <section id="downloads" aria-labelledby="download-title">
+    <h2 id="download-title">Downloads</h2>
+    <div class="panel download-panel">
+      <a href="downloads/Who-Would-Win-2.0-Android.apk" download>Android APK</a>
+      <a href="downloads/Who-Would-Win-2.0-Windows-x64.exe" download>Windows x64</a>
+      <a href="downloads/Who-Would-Win-2.0-Windows-arm64.exe" download>Windows ARM64</a>
+      <a href="downloads/Who-Would-Win-2.0-Windows-x86.exe" download>Windows x86</a>
+      <a href="downloads/SHA256SUMS.txt">Download checksums</a>
+      <p>Apple and Linux can run the web version. On iPhone or iPad, open it in Safari to add it to your Home Screen.</p>
+    </div>
+  </section>
+</main>
+<footer class="wrap muted">An independent fan project by Joshua Serie. Character names and series are credited to their respective owners.</footer>
+<dialog id="fighter-details" aria-labelledby="fighter-name"></dialog>
+</body>
+</html>

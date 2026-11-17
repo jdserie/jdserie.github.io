@@ -1,0 +1,14 @@
+{
+  "id": "./",
+  "name": "Who Would Win in a Fight? 2.0",
+  "short_name": "Who Would Win?",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#101722",
+  "background_color": "#101722",
+  "icons": [
+    {"src": "assets/icon.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}

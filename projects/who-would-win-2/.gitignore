@@ -1,0 +1,5 @@
+__pycache__/
+.venv/
+*.idsig
+*.p12
+*.jks
