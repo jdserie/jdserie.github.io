@@ -78,3 +78,26 @@ nav {
     z-index: 1;
     text-align: center;
 }
+
+.portfolio-projects {
+  color: #fff8e7;
+  padding-block: 3rem;
+}
+.portfolio-projects h1 { margin: 0 0 .45rem; font-weight: 800; }
+.portfolio-projects a { color: #e4f1a8; text-decoration: underline; }
+.portfolio-projects a:focus-visible { outline: 3px solid #ffd780; outline-offset: 4px; }
+.portfolio-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 1rem;
+  margin-block: 1.35rem;
+}
+.portfolio-project-card {
+  background: #162c24;
+  border: 1px solid #617a6a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.portfolio-project-card img { display: block; width: 100%; height: auto; aspect-ratio: 1160 / 420; }
+.portfolio-project-card div { padding: 1rem; }
+.portfolio-project-card h2 { color: #fff8e7; font-size: 1.35rem; margin: 0 0 .5rem; }
